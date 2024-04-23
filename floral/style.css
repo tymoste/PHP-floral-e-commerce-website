@@ -1,0 +1,797 @@
+body {
+  font-family: "Arial", sans-serif;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  background-image: url("background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+header {
+  background-color: #f2f2f2;
+  padding: 20px;
+  text-align: center;
+}
+
+section h1 {
+  color: white;
+}
+section h2 {
+  color: white;
+}
+
+nav {
+  background-color: #CC55EB;
+  width: 100%;
+  color: #fff;
+  padding: 10px;
+  display: flex;
+  position: sticky;
+  top: 0;
+  justify-content: space-between;
+  z-index: 1000;
+}
+nav a {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+nav a img {
+  width: 10vw;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+}
+nav ul li {
+  margin-right: 15px;
+  padding: 10px;
+  border-radius: 16px;
+  transition: all ease 0.5s;
+}
+nav ul li a {
+  text-decoration: none;
+  color: #fff;
+}
+nav ul li:hover {
+  border-radius: 16px;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+nav div {
+  display: flex;
+  align-items: center;
+}
+nav div label {
+  color: #fff;
+  margin-right: 5px;
+}
+nav div select {
+  padding: 8px;
+  font-size: 14px;
+  margin-right: 2vw;
+}
+
+#panel {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  min-height: 60vh;
+}
+#panel .addProduct {
+  display: flex;
+  flex-direction: column;
+  min-height: 60vh;
+  max-height: 60vh;
+}
+#panel .addProduct h2 {
+  width: 100%;
+  text-align: center;
+  font-size: 250%;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+}
+#panel .addProduct form {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+#panel .addProduct form label {
+  color: white;
+}
+#panel .addProduct form input {
+  border: 1px solid black;
+  border-radius: 15px;
+  height: 5vh;
+  text-align: center;
+  background-color: white;
+}
+#panel .addProduct form button {
+  color: white;
+  width: 100%;
+  height: 5vh;
+  border-radius: 10px;
+  border: none;
+  transition: all ease 0.5s;
+  cursor: pointer;
+  background-color: #10b9cf;
+}
+#panel .addProduct form button:hover {
+  background-color: rgba(16, 185, 207, 0.3);
+}
+#panel .manageCategories {
+  display: flex;
+  flex-direction: column;
+  min-height: 60vh;
+  max-height: 60vh;
+}
+#panel .manageCategories h2 {
+  width: 100%;
+  text-align: center;
+  font-size: 250%;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+}
+#panel .manageCategories form {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+#panel .manageCategories form .categories {
+  overflow-y: scroll;
+}
+#panel .manageCategories form .categories .category {
+  background-color: white;
+  min-width: 20vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: 2.5vh;
+  padding-bottom: 2.5vh;
+  padding-left: 2vw;
+  padding-right: 2vw;
+  transition: all ease 0.5s;
+  box-shadow: 0 0 10px black;
+  border-radius: 15px;
+  align-items: center;
+  margin: 2vh;
+}
+#panel .manageCategories form .categories .category .categoryName {
+  overflow-wrap: break-word;
+  max-width: 80%;
+}
+#panel .manageCategories form .categories .category button {
+  color: white;
+  width: 5vw;
+  height: 5vh;
+  border-radius: 10px;
+  border: none;
+  transition: all ease 0.5s;
+  cursor: pointer;
+  background-color: #d84444;
+}
+#panel .manageCategories form .categories .category button:hover {
+  background-color: rgba(216, 68, 68, 0.3);
+}
+#panel .manageCategories form .category:hover {
+  transform: scale(105%);
+  box-shadow: 0 0 20px black;
+}
+#panel .manageCategories form .newCategory {
+  background-color: white;
+  height: 20vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  padding-left: 2.5vw;
+  padding-right: 2.5vw;
+  box-shadow: 0 0 10px black;
+  border-radius: 15px;
+  margin: 2vh;
+}
+#panel .manageCategories form .newCategory input {
+  border: 1px solid black;
+  border-radius: 15px;
+  height: 5vh;
+  text-align: center;
+}
+#panel .manageCategories form .newCategory button {
+  color: white;
+  width: 100%;
+  height: 5vh;
+  border-radius: 10px;
+  border: none;
+  transition: all ease 0.5s;
+  cursor: pointer;
+  background-color: #10b9cf;
+}
+#panel .manageCategories form .newCategory button:hover {
+  background-color: rgba(16, 185, 207, 0.3);
+}
+#panel .manageCategories form .newCategory input[type=text] {
+  width: 100%;
+}
+
+#login {
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#login h2 {
+  font-size: 250%;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+}
+#login form {
+  width: 20vw;
+  height: 30vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+#login form label {
+  color: white;
+}
+#login form .form-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#login form input {
+  border: 1px solid black;
+  border-radius: 15px;
+  height: 5vh;
+  text-align: center;
+  width: 100%;
+}
+#login form button {
+  color: white;
+  width: 100%;
+  height: 5vh;
+  border-radius: 10px;
+  border: none;
+  transition: all ease 0.5s;
+  cursor: pointer;
+  background-color: #10b9cf;
+}
+#login form button:hover {
+  background-color: rgba(16, 185, 207, 0.3);
+}
+
+#registration {
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#registration h2 {
+  font-size: 200%;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+}
+#registration form {
+  width: 20vw;
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+#registration form label {
+  color: white;
+}
+#registration form .form-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#registration form input {
+  border: 1px solid black;
+  border-radius: 15px;
+  height: 5vh;
+  text-align: center;
+  width: 100%;
+}
+#registration form button {
+  color: white;
+  width: 100%;
+  height: 5vh;
+  border-radius: 10px;
+  border: none;
+  transition: all ease 0.5s;
+  cursor: pointer;
+  background-color: #10b9cf;
+}
+#registration form button:hover {
+  background-color: rgba(16, 185, 207, 0.3);
+}
+
+#edit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#edit form {
+  width: 20vw;
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  color: white;
+}
+#edit form input {
+  border: 1px solid black;
+  border-radius: 15px;
+  height: 5vh;
+  text-align: center;
+  background-color: white;
+}
+#edit form button {
+  color: white;
+  width: 100%;
+  height: 5vh;
+  border-radius: 10px;
+  border: none;
+  transition: all ease 0.5s;
+  cursor: pointer;
+  background-color: #10b9cf;
+}
+#edit form button:hover {
+  background-color: rgba(16, 185, 207, 0.3);
+}
+
+#account {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  min-height: 60vh;
+}
+#account .nameChange {
+  display: flex;
+  flex-direction: column;
+  min-height: 60vh;
+  text-align: center;
+  width: 40%;
+}
+#account .nameChange h2 {
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+  font-size: 250%;
+}
+#account .nameChange form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  min-height: 30vh;
+}
+#account .nameChange form label {
+  color: white;
+}
+#account .nameChange form .form-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 7vh;
+}
+#account .nameChange form .form-group input {
+  border: 1px solid black;
+  border-radius: 15px;
+  height: 5vh;
+  text-align: center;
+  width: 100%;
+}
+#account .nameChange form button {
+  color: white;
+  width: 100%;
+  height: 5vh;
+  border-radius: 10px;
+  border: none;
+  transition: all ease 0.5s;
+  cursor: pointer;
+  background-color: #10b9cf;
+}
+#account .nameChange form button:hover {
+  background-color: rgba(16, 185, 207, 0.3);
+}
+#account .manageAddress {
+  display: flex;
+  flex-direction: column;
+  min-height: 60vh;
+  text-align: center;
+  width: 40%;
+}
+#account .manageAddress h2 {
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+  font-size: 250%;
+}
+#account .manageAddress .allControlers {
+  display: flex;
+  flex-direction: column;
+  min-height: 60vh;
+  text-align: center;
+  justify-content: space-evenly;
+}
+#account .manageAddress .allControlers form {
+  display: flex;
+  flex-direction: column;
+}
+#account .manageAddress .allControlers form label {
+  color: white;
+}
+#account .manageAddress .allControlers form .newAddress {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  min-height: 20vh;
+  max-height: 25vh;
+}
+#account .manageAddress .allControlers form .newAddress input {
+  border: 1px solid black;
+  border-radius: 15px;
+  height: 5vh;
+  text-align: center;
+  width: 100%;
+}
+#account .manageAddress .allControlers form button {
+  color: white;
+  width: 100%;
+  height: 5vh;
+  border-radius: 10px;
+  border: none;
+  transition: all ease 0.5s;
+  cursor: pointer;
+  background-color: #10b9cf;
+}
+#account .manageAddress .allControlers form button:hover {
+  background-color: rgba(16, 185, 207, 0.3);
+}
+#account .manageAddress .allControlers .myAddress {
+  overflow-y: scroll;
+  height: 30vh;
+}
+#account .manageAddress .allControlers .myAddress button {
+  color: white;
+  width: 5vw;
+  height: 5vh;
+  border-radius: 10px;
+  border: none;
+  transition: all ease 0.5s;
+  cursor: pointer;
+  background-color: #d84444;
+}
+#account .manageAddress .allControlers .myAddress button:hover {
+  background-color: rgba(216, 68, 68, 0.3);
+}
+#account .manageAddress .allControlers .myAddress .address {
+  background-color: white;
+  min-width: 20vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: 2.5vh;
+  padding-bottom: 2.5vh;
+  padding-left: 2vw;
+  padding-right: 2vw;
+  transition: all ease 0.5s;
+  box-shadow: 0 0 10px black;
+  border-radius: 15px;
+  align-items: center;
+  margin: 2vh;
+}
+
+#products {
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+#products .indexContainer {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+#products .indexContainer .selector {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#products .indexContainer .selector label {
+  color: white;
+}
+#products .indexContainer .selector select {
+  width: 10vw;
+  height: 5vh;
+  text-align: center;
+  background-color: transparent;
+  border: none;
+  color: white;
+}
+#products .indexContainer .selector select option {
+  color: black;
+}
+#products .indexContainer h1 {
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+  font-size: 250%;
+  width: 50%;
+}
+#products .indexContainer div {
+  width: 25%;
+}
+#products .productControls {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-bottom: 5vh;
+}
+#products .productControls button {
+  color: white;
+  width: 5vw;
+  height: 5vh;
+  border-radius: 10px;
+  border: none;
+  transition: all ease 0.5s;
+  cursor: pointer;
+}
+#products .productControls input[type=number] {
+  -webkit-appearance: textfield;
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+#products .productControls input[type=number]::-webkit-inner-spin-button,
+#products .productControls input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+#products .productControls .number-input {
+  border: 0;
+  display: inline-flex;
+}
+#products .productControls .number-input div {
+  outline: none;
+  -webkit-appearance: none;
+  background-color: transparent;
+  border: none;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  cursor: pointer;
+  margin: 0;
+  position: relative;
+  box-shadow: 0px 0px 1px #474747;
+  border-radius: 50%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#products .productControls .number-input input[type=number] {
+  font-family: sans-serif;
+  max-width: 5rem;
+  padding: 0.5rem;
+  border: none;
+  border-width: 0 2px;
+  font-size: 2rem;
+  height: 3rem;
+  font-weight: bold;
+  text-align: center;
+  color: #9be3df;
+}
+#products .productControls .delProdBtn {
+  background-color: #d84444;
+}
+#products .productControls .delProdBtn:hover {
+  background-color: rgba(216, 68, 68, 0.3);
+}
+#products .productControls .editProdBtn {
+  background-color: #10b9cf;
+}
+#products .productControls .editProdBtn:hover {
+  background-color: rgba(16, 185, 207, 0.3);
+}
+#products .productControls .addToCart {
+  width: 100%;
+  background-color: #10b9cf;
+}
+#products .productControls .addToCart:hover {
+  background-color: rgba(16, 185, 207, 0.3);
+}
+#products .productControls form {
+  display: flex;
+  flex-direction: column;
+}
+#products .productControls form input {
+  text-align: center;
+}
+#products .product {
+  background-color: white;
+  border: 1px solid white;
+  width: 20%;
+  margin-bottom: 5vh;
+  border-radius: 16px;
+  transition: all ease 0.5s;
+  box-shadow: 0 0 10px black;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+#products .product img {
+  width: 100%;
+}
+#products .product:hover {
+  transform: scale(105%);
+  box-shadow: 0 0 20px black;
+}
+
+#cart {
+  text-align: center;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+#cart .cartProducts {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 40%;
+}
+#cart .cartProducts h2 {
+  font-size: 250%;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+}
+#cart .cartProducts .cartProductsWraper {
+  height: 55vh;
+  overflow-y: scroll;
+}
+#cart .cartProducts .cartProductsWraper .cartProduct {
+  background-color: white;
+  height: 10vh;
+  min-width: 20vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: 2.5vh;
+  padding-bottom: 2.5vh;
+  padding-left: 2vw;
+  padding-right: 2vw;
+  transition: all ease 0.5s;
+  box-shadow: 0 0 10px black;
+  border-radius: 15px;
+  align-items: center;
+  margin: 2vh;
+}
+#cart .cartProducts .cartProductsWraper .cartProduct .product {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 70%;
+}
+#cart .cartProducts .cartProductsWraper .cartProduct .product h3 {
+  width: 100%;
+}
+#cart .cartProducts .cartProductsWraper .cartProduct .product img {
+  height: 100%;
+  width: auto;
+}
+#cart .cartProducts .cartProductsWraper .cartProduct .cartProductControls {
+  width: 30%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+#cart .cartProducts .cartProductsWraper .cartProduct .cartProductControls button {
+  border: none;
+  transition: all ease 0.5s;
+}
+#cart .cartProducts .cartProductsWraper .cartProduct .cartProductControls .delCartBtn {
+  height: 5vh;
+  border-radius: 14px;
+  width: 3vw;
+  color: #fff;
+  background-color: #d84444;
+}
+#cart .cartProducts .cartProductsWraper .cartProduct .cartProductControls .delCartBtn:hover {
+  background-color: rgba(216, 68, 68, 0.3);
+}
+#cart .cartProducts .cartProductsWraper .cartProduct .cartProductControls .minusCartBtn {
+  height: 4vh;
+  width: 4vh;
+  border-radius: 50%;
+  color: #fff;
+  background-color: #10b9cf;
+}
+#cart .cartProducts .cartProductsWraper .cartProduct .cartProductControls .minusCartBtn:hover {
+  background-color: rgba(16, 185, 207, 0.3);
+}
+#cart .cartProducts .cartProductsWraper .cartProduct .cartProductControls .plusCartBtn {
+  height: 4vh;
+  width: 4vh;
+  border-radius: 50%;
+  color: #fff;
+  background-color: #10b9cf;
+}
+#cart .cartProducts .cartProductsWraper .cartProduct .cartProductControls .plusCartBtn:hover {
+  background-color: rgba(16, 185, 207, 0.3);
+}
+#cart .orderForm {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+}
+#cart .orderForm h2 {
+  font-size: 250%;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+}
+#cart .orderForm form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+#cart .orderForm form label {
+  color: white;
+  font-size: 100%;
+}
+#cart .orderForm form button {
+  border: none;
+  border-radius: 16px;
+  width: 100%;
+  color: #fff;
+  height: 7vh;
+  background-color: #10b9cf;
+  transition: all ease 0.5s;
+}
+#cart .orderForm form button:hover {
+  background-color: rgba(16, 185, 207, 0.3);
+}
+
+#thankYou {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 78vh;
+  font-size: 40px;
+}
+
+#contactInfo {
+  display: flex;
+  height: 60vh;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#contactInfo h2 {
+  font-size: 300%;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+}
+#contactInfo p {
+  color: white;
+  font-size: 200%;
+}
+
+footer {
+  background-color: #CC55EB;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  margin-top: auto;
+  width: 100%;
+}/*# sourceMappingURL=style.css.map */
